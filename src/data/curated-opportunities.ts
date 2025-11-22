@@ -1,0 +1,178 @@
+import type { Opportunity } from "@/lib/types";
+import { TARGET_COUNTRY } from "@/lib/constants";
+import { hashId } from "@/lib/utils";
+
+export const curatedOpportunities: Opportunity[] = [
+  {
+    id: hashId("curated-eacea-oas-2025"),
+    sourceId: "curated-eacea",
+    source: {
+      id: "curated-eacea",
+      name: "EU Erasmus+ (Manual)",
+      url: "https://erasmus-plus.ec.europa.eu/",
+      type: "curated",
+      attribution: "European Education and Culture Executive Agency",
+      complianceNotes: [
+        "Official programme summary curated from public Erasmus+ documentation.",
+      ],
+      updateFrequencyHours: 720,
+    },
+    opportunityType: "scholarship",
+    title: "Erasmus+ MSc in Artificial Intelligence - North Africa Scholarship Track",
+    summary:
+      "Full Erasmus Mundus Joint Master support for Algerian STEM graduates specialising in applied AI across three European partner universities.",
+    description:
+      "Curriculum rotates across the University of Bologna, University of Ljubljana, and KU Leuven. Scholarship covers tuition, travel, installation, and a €1,400 monthly stipend. Applicants must hold a STEM bachelor's degree obtained after 2017 and demonstrate B2 English level.",
+    url: "https://www.apply.ai-master.eu/",
+    publishedAt: new Date().toISOString(),
+    deadline: new Date(new Date().getFullYear(), 11, 1).toISOString(),
+    location: "Italy · Slovenia · Belgium",
+    countryFocus: [TARGET_COUNTRY, "North Africa", "EU"],
+    eligibility: [
+      "Algerian nationals or residents",
+      "STEM bachelor's degree completed within the last 8 years",
+      "Minimum GPA equivalent to 12/20",
+      "English proficiency B2 (IELTS 6.5 or TOEFL 90)",
+    ],
+    tags: [
+      "computer science",
+      "artificial intelligence",
+      "masters",
+      "full funding",
+      "mobility",
+    ],
+    mode: "in-person",
+    funding: "Full tuition + €1,400 monthly stipend + travel",
+    stipend: "€1400",
+    currency: "EUR",
+    aiConfidence: 0.95,
+  },
+  {
+    id: hashId("curated-daad-ppp-2025"),
+    sourceId: "curated-daad",
+    source: {
+      id: "curated-daad",
+      name: "DAAD Regional Scholarship Digest (Manual)",
+      url: "https://www.daad.de/en/study-and-research-in-germany/scholarships/",
+      type: "curated",
+      attribution: "DAAD Scholarship Database",
+      complianceNotes: [
+        "Information compiled manually from the DAAD public scholarship finder.",
+      ],
+      updateFrequencyHours: 1440,
+    },
+    opportunityType: "scholarship",
+    title: "DAAD Research Grants – Bi-nationally Supervised Doctoral Degrees (Algeria Focus)",
+    summary:
+      "3 to 4-year doctoral funding for Algerian researchers co-supervised by German institutions with innovation transfer support.",
+    description:
+      "Grant provides a monthly €1,300 stipend, health insurance, and travel allowance. Candidates must secure a German host supervisor and outline research impact for Algeria's digital transformation agenda.",
+    url: "https://www.daad.de/en/study-and-research-in-germany/scholarships/daad-research-grants-bi-nationally-supervised-doctoral-degrees/",
+    publishedAt: new Date().toISOString(),
+    deadline: new Date(new Date().getFullYear(), 8, 15).toISOString(),
+    location: "Germany · Hybrid",
+    countryFocus: [TARGET_COUNTRY, "Germany", "EU"],
+    eligibility: [
+      "Algerian citizenship",
+      "Master's degree in STEM discipline",
+      "Research proposal aligned with bilateral cooperation",
+      "German language A2 or English proficiency",
+    ],
+    tags: [
+      "phd",
+      "research",
+      "digital transformation",
+      "full funding",
+      "exchange",
+    ],
+    mode: "hybrid",
+    funding: "€1,300 monthly stipend + travel + insurance",
+    stipend: "€1300",
+    currency: "EUR",
+    aiConfidence: 0.9,
+  },
+  {
+    id: hashId("curated-sonatrach-intern-2025"),
+    sourceId: "curated-sonatrach",
+    source: {
+      id: "curated-sonatrach",
+      name: "Innovation Cluster Algiers (Manual)",
+      url: "https://www.innovationcluster.dz/",
+      type: "curated",
+      attribution: "Innovation Cluster Algiers Careers",
+      complianceNotes: [
+        "Submitted manually by partner organisations via compliance form.",
+      ],
+      updateFrequencyHours: 504,
+    },
+    opportunityType: "internship",
+    title: "Innovation Cluster Software Engineering Internship",
+    summary:
+      "12-week rotational internship focusing on cloud-native services for the energy sector in Algiers Digital District.",
+    description:
+      "Interns join agile squads delivering microservices for Sonatrach digital transformation projects. Includes mentorship, DevSecOps training, and stipend.",
+    url: "https://www.innovationcluster.dz/internships",
+    publishedAt: new Date().toISOString(),
+    deadline: new Date(new Date().getFullYear(), 5, 30).toISOString(),
+    location: "Algiers, Algeria",
+    countryFocus: [TARGET_COUNTRY],
+    eligibility: [
+      "Final year computer science or software engineering student",
+      "Strong Python or TypeScript skills",
+      "Knowledge of Docker and cloud fundamentals",
+      "French or English fluency",
+    ],
+    tags: [
+      "software engineering",
+      "devops",
+      "cloud",
+      "microservices",
+    ],
+    mode: "in-person",
+    stipend: "35,000 DZD/month",
+    currency: "DZD",
+    aiConfidence: 0.88,
+  },
+  {
+    id: hashId("curated-yassir-ai-intern-2025"),
+    sourceId: "curated-yassir",
+    source: {
+      id: "curated-yassir",
+      name: "Yassir Careers (Manual)",
+      url: "https://yassir.com/en/careers/",
+      type: "curated",
+      attribution: "Yassir R&D",
+      complianceNotes: [
+        "Opportunity confirmed via Yassir's public careers portal, ingested through partner RSS relay.",
+      ],
+      updateFrequencyHours: 240,
+    },
+    opportunityType: "internship",
+    title: "Machine Learning Engineering Intern",
+    summary:
+      "6-month applied ML internship in Algiers developing fraud detection pipelines for ride-hailing systems.",
+    description:
+      "Interns prototype ML services with Python, FastAPI, and Airflow. Includes rotation with DataOps guild and mentorship from senior staff.",
+    url: "https://yassir.com/en/careers/",
+    publishedAt: new Date().toISOString(),
+    deadline: new Date(new Date().getFullYear(), 3, 1).toISOString(),
+    location: "Algiers, Algeria · Hybrid",
+    countryFocus: [TARGET_COUNTRY],
+    eligibility: [
+      "Enrolled in computer science or applied mathematics degree",
+      "Experience with Python ML stack (scikit-learn, pandas)",
+      "SQL proficiency",
+      "Ability to commit 4 days per week",
+    ],
+    tags: [
+      "machine learning",
+      "data science",
+      "fraud detection",
+      "python",
+    ],
+    mode: "hybrid",
+    stipend: "70,000 DZD/month",
+    currency: "DZD",
+    aiConfidence: 0.86,
+  },
+];

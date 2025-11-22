@@ -1,0 +1,23 @@
+import * as React from "react";
+import { cn } from "@/lib/cn";
+
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: "primary" | "secondary" | "ghost" | "outline";
+}
+
+const baseStyles = "inline-flex items-center justify-center gap-2 rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60";
+
+const VARIANT_STYLES: Record<Required<ButtonProps>["variant"], string> = {
+  primary: "bg-gradient-to-r from-indigo-500 via-blue-500 to-sky-500 text-white hover:opacity-90 focus-visible:ring-indigo-500",
+  secondary: "bg-zinc-100 text-zinc-900 hover:bg-zinc-200 focus-visible:ring-zinc-400 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700",
+  ghost: "bg-transparent hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-200 focus-visible:ring-zinc-400",
+  outline: "border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-200 hover:bg-zinc-100/60 dark:hover:bg-zinc-800/60 focus-visible:ring-zinc-400",
+};
+
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant = "primary", type = "button", ...props }, ref) => (
+    <button ref={ref} type={type} className={cn(baseStyles, VARIANT_STYLES[variant], className)} {...props} />
+  ),
+);
+
+Button.displayName = "Button";
